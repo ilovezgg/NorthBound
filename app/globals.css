@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-bg: #100f0c;
+  --color-bg-dark: #0a0908;
+  --color-surface: #1c1a16;
+  --color-ink: #f3efe6;
+  --color-ink-secondary: #a8a297;
+  --color-ink-muted: #6e695d;
+  --color-border: #2c2a24;
+  --color-accent: #d9824e;
+  --color-accent-soft: #2b1f18;
+  --color-cream: #f3efe6;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-pillbg: #1c1a16;
+  --color-moss: #3d4534;
+  --color-moss-ink: #e4e6d5;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-oswald);
+  --font-body: var(--font-inter);
+
+  --text-display: clamp(2.75rem, 6vw + 1rem, 7.5rem);
+  --text-h2: clamp(2rem, 3vw + 1rem, 3.5rem);
+  --text-h3: clamp(1.25rem, 0.8vw + 1rem, 1.625rem);
+  --text-body: 1.0625rem;
+  --text-body-sm: 0.875rem;
+  --text-label: 0.75rem;
+
+  --spacing-section-y: clamp(5rem, 9vw, 9rem);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+html {
+  scrollbar-color: var(--color-accent) var(--color-bg-dark);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 999px;
+  border: 2px solid var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-accent) 80%, white);
 }
